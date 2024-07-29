@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://cigokei4saeso"]
+
+[ext_resource type="Texture2D" uid="uid://de8xk6mmws6hy" path="res://Inverse kinematics/assets/monigote.png" id="1_i5g16"]
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_clwmy"]
+target_nodepath = NodePath("../Target")
+tip_nodepath = NodePath("Base/Antebrazo/Brazo/Mano")
+ccdik_data_chain_length = 3
+joint_data/0/bone_index = 2
+joint_data/0/bone2d_node = NodePath("Base/Antebrazo/Brazo")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 253.942
+joint_data/0/constraint_angle_max = 54.149
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/0/editor_draw_gizmo = false
+joint_data/1/bone_index = 0
+joint_data/1/bone2d_node = NodePath("Antebrazo")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = 0.0
+joint_data/1/constraint_angle_max = 360.0
+joint_data/1/constraint_angle_invert = false
+joint_data/1/constraint_in_localspace = true
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 0
+joint_data/2/bone2d_node = NodePath("Antebrazo")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = 0.0
+joint_data/2/constraint_angle_max = 360.0
+joint_data/2/constraint_angle_invert = false
+joint_data/2/constraint_in_localspace = true
+joint_data/2/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_persh"]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource("SkeletonModification2DCCDIK_clwmy")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axa1d"]
+radius = 35.117
+
+[node name="Brazo" type="CharacterBody2D"]
+
+[node name="Poligonos" type="Node2D" parent="."]
+
+[node name="Mano" type="Polygon2D" parent="Poligonos"]
+position = Vector2(368, 106)
+rotation = -2.73166
+offset = Vector2(-218, -16)
+texture = ExtResource("1_i5g16")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(158.503, 20.4082, 148.98, 37.415, 150.34, 56.4626, 156.463, 70.7483, 164.626, 80.2721, 175.51, 89.1156, 195.918, 93.8775, 221.769, 91.8367, 236.735, 82.3129, 249.66, 58.5034, 250.34, 36.0544, 238.095, 19.7279, 225.85, 9.52381, 210.204, -1.36054, 187.075, -2.72109, 174.15, 8.16327, 165.306, 12.2449, 196.562, 47.5645)
+uv = PackedVector2Array(158.503, 20.4082, 148.98, 37.415, 150.34, 56.4626, 156.463, 70.7483, 164.626, 80.2721, 175.51, 89.1156, 195.918, 93.8775, 221.769, 91.8367, 236.735, 82.3129, 249.66, 58.5034, 250.34, 36.0544, 238.095, 19.7279, 225.85, 9.52381, 210.204, -1.36054, 187.075, -2.72109, 174.15, 8.16327, 165.306, 12.2449, 196.562, 47.5645)
+polygons = [PackedInt32Array(0, 17, 15), PackedInt32Array(0, 1, 17), PackedInt32Array(1, 3, 17), PackedInt32Array(3, 5, 17), PackedInt32Array(5, 7, 17), PackedInt32Array(7, 9, 17), PackedInt32Array(17, 13, 15), PackedInt32Array(17, 13, 11), PackedInt32Array(17, 11, 10), PackedInt32Array(17, 10, 9)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Antebrazo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Antebrazo/Brazo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Base/Antebrazo/Brazo/Mano", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+internal_vertex_count = 1
+
+[node name="Base" type="Polygon2D" parent="Poligonos"]
+position = Vector2(111, 135)
+texture = ExtResource("1_i5g16")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(152.778, 114.352, 255.556, 114.352, 278.241, 139.352, 288.426, 249.537, 278.241, 265.278, 251.852, 264.815, 190.278, 270.833, 160.185, 275.926, 149.074, 231.019, 140.741, 133.333, 216.204, 194.907)
+uv = PackedVector2Array(152.778, 114.352, 255.556, 114.352, 278.241, 139.352, 288.426, 249.537, 278.241, 265.278, 251.852, 264.815, 190.278, 270.833, 160.185, 275.926, 149.074, 231.019, 140.741, 133.333, 216.204, 194.907)
+polygons = [PackedInt32Array(9, 10, 0), PackedInt32Array(10, 1, 0), PackedInt32Array(10, 2, 1), PackedInt32Array(10, 3, 2), PackedInt32Array(10, 5, 3), PackedInt32Array(6, 10, 5), PackedInt32Array(7, 8, 10), PackedInt32Array(7, 10, 6), PackedInt32Array(8, 9, 10)]
+internal_vertex_count = 1
+
+[node name="anteBrazo" type="Polygon2D" parent="Poligonos"]
+position = Vector2(326, 265)
+rotation = -0.789212
+offset = Vector2(-291.942, -134.558)
+texture = ExtResource("1_i5g16")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(260.674, 116.854, 310.674, 156.742, 376.966, 72.4719, 327.528, 32.5843, 319.101, 97.7528)
+uv = PackedVector2Array(260.674, 116.854, 310.674, 156.742, 376.966, 72.4719, 327.528, 32.5843, 319.101, 97.7528)
+polygons = [PackedInt32Array(0, 4, 3), PackedInt32Array(0, 1, 4), PackedInt32Array(4, 3, 2), PackedInt32Array(4, 1, 2)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0), "Base/Antebrazo", PackedFloat32Array(1, 1, 1, 1, 1), "Base/Antebrazo/Brazo", PackedFloat32Array(0, 0, 0, 0, 0), "Base/Antebrazo/Brazo/Mano", PackedFloat32Array(0, 0, 0, 0, 0)]
+internal_vertex_count = 1
+
+[node name="Brazo" type="Polygon2D" parent="Poligonos"]
+position = Vector2(310, 177)
+rotation = 0.00754905
+offset = Vector2(-353.233, -172.138)
+texture = ExtResource("1_i5g16")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(319.663, 173.034, 369.101, 188.764, 413.483, 139.326, 419.663, 89.8876, 390.449, 87.0787, 352.809, 125.843, 375.843, 138.764)
+uv = PackedVector2Array(319.663, 173.034, 369.101, 188.764, 413.483, 139.326, 419.663, 89.8876, 390.449, 87.0787, 352.809, 125.843, 375.843, 138.764)
+polygons = [PackedInt32Array(0, 6, 5), PackedInt32Array(0, 1, 6), PackedInt32Array(6, 1, 2), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 2, 3), PackedInt32Array(6, 4, 3)]
+bones = ["Base", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Base/Antebrazo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0), "Base/Antebrazo/Brazo", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1), "Base/Antebrazo/Brazo/Mano", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 1
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(332, 263)
+modification_stack = SubResource("SkeletonModificationStack2D_persh")
+
+[node name="Base" type="Bone2D" parent="Skeleton2D"]
+rest = Transform2D(1, -2.38419e-07, 2.38419e-07, 1, 0, 0)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Antebrazo" type="Bone2D" parent="Skeleton2D/Base"]
+rotation = -2.42235
+scale = Vector2(0.999968, 0.999968)
+rest = Transform2D(-0.75228, -0.658795, 0.658795, -0.75228, 0, 0)
+
+[node name="Brazo" type="Bone2D" parent="Skeleton2D/Base/Antebrazo"]
+position = Vector2(71, 52)
+rotation = 1.45884
+rest = Transform2D(0.111723, 0.993739, -0.993739, 0.111723, 71, 52)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Mano" type="Bone2D" parent="Skeleton2D/Base/Antebrazo/Brazo"]
+position = Vector2(89.5483, 9.06132)
+rotation = 0.362424
+rest = Transform2D(0.93504, 0.354542, -0.354542, 0.93504, 89.5483, 9.06132)
+auto_calculate_length_and_angle = false
+length = 61.645
+bone_angle = 0.0
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Base/Antebrazo/Brazo/Mano"]
+position = Vector2(35.06, 0)
+remote_path = NodePath("../../../../../../CollisionShape2D")
+
+[node name="Target" type="Node2D" parent="."]
+position = Vector2(504, 166)
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(518.762, 175.764)
+rotation = -0.0473783
+scale = Vector2(0.999955, 0.999955)
+shape = SubResource("CircleShape2D_axa1d")
+disabled = true
