@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://uoqllnigier0"]
+
+[ext_resource type="Shader" path="res://shaders/Circle pixelart/CirclePixelArt.gdshader" id="1_r4gu4"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="2_lu83g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtfru"]
+shader = ExtResource("1_r4gu4")
+shader_parameter/amount_x = 30.0
+shader_parameter/amount_y = 25.0
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(29, 177)
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qtfru")
+position = Vector2(528, 139)
+texture = ExtResource("2_lu83g")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpqio3ibrs3o0"]
+
+[ext_resource type="Texture2D" uid="uid://b354ltptmikmc" path="res://shaders/Assets/jf3nql82.bmp" id="1_35nc4"]
+[ext_resource type="Texture2D" uid="uid://cr2xru3urja7p" path="res://icon.png" id="2_b0yu6"]
+[ext_resource type="Shader" path="res://shaders/Pencil/Pencil.gdshader" id="3_apoiu"]
+[ext_resource type="Texture2D" uid="uid://bse8y87bohnqm" path="res://shaders/Assets/Pencil/parchment.jpg" id="4_b4tr6"]
+[ext_resource type="Texture2D" uid="uid://byhdqxukg5omy" path="res://shaders/Assets/Pencil/pencil.jpg" id="5_t51s5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqb2l"]
+shader = ExtResource("3_apoiu")
+shader_parameter/u_bgColor = Color(1, 1, 1, 1)
+shader_parameter/u_bgColorFactor = 0.62
+shader_parameter/u_patternColor = Color(0, 0, 0, 1)
+shader_parameter/u_threshold1 = 0.728
+shader_parameter/u_threshold2 = 0.467
+shader_parameter/u_threshold3 = 0.358
+shader_parameter/u_threshold4 = 0.159
+shader_parameter/u_bgTiling = Vector2(1, 1)
+shader_parameter/u_patternTiling = Vector2(1, 1)
+shader_parameter/u_bgTexture = ExtResource("4_b4tr6")
+shader_parameter/u_patternTexture = ExtResource("5_t51s5")
+
+[node name="Pencil" type="Node2D"]
+
+[node name="Jf3Nql82" type="Sprite2D" parent="."]
+position = Vector2(608, 330)
+scale = Vector2(0.757292, 0.757292)
+texture = ExtResource("1_35nc4")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(209, 92)
+texture = ExtResource("2_b0yu6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_hqb2l")
+offset_left = -56.0
+offset_top = -98.0
+offset_right = 1301.0
+offset_bottom = 735.0

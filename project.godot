@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Experimentos"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Rom/Documents/Godot is fun/Experimentos/clips/clip.avi"
+movie_writer/disable_vsync=true
 
 [editor_plugins]
 

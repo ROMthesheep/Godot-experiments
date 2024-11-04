@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwglgedder41g"]
+
+[ext_resource type="Shader" uid="uid://dt4v76oevas6d" path="res://shaders/Color replacement/color replacement.tres" id="1_c7f4r"]
+[ext_resource type="Texture2D" uid="uid://44kkxkt5tw5p" path="res://shaders/Color replacement/niño.png" id="2_3my7j"]
+[ext_resource type="Script" path="res://shaders/Color replacement/Icon.gd" id="3_7lsfk"]
+[ext_resource type="Shader" path="res://shaders/Color replacement/color replacement.gdshader" id="4_3fs6f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyhal"]
+shader = ExtResource("1_c7f4r")
+shader_parameter/ColorParameter = Color(0.843958, 0.548781, 0.917999, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyf7i"]
+shader = ExtResource("4_3fs6f")
+shader_parameter/replacement_color = Color(0.286275, 0.32549, 0.407843, 1)
+
+[node name="ColorReplacement" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kyhal")
+position = Vector2(181, 331)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3my7j")
+script = ExtResource("3_7lsfk")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cyf7i")
+position = Vector2(426, 321)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3my7j")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(671, 317)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3my7j")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 634.0
+offset_top = 73.0
+offset_right = 692.0
+offset_bottom = 96.0
+text = "Control
+"
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+offset_left = 833.0
+offset_top = 32.0
+offset_right = 1131.0
+offset_bottom = 608.0
+color = Color(0.117647, 0.447059, 0.694118, 1)
+
+[connection signal="color_changed" from="ColorPicker" to="Icon" method="_on_color_picker_color_changed"]

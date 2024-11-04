@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://kebaw4lrfupf"]
+
+[ext_resource type="Shader" path="res://shaders/Notebook/notebook.gdshader" id="1_m005i"]
+[ext_resource type="Texture2D" uid="uid://44n5ntmk0f76" path="res://shaders/Notebook/Captura de pantalla 2024-09-08 181104.png" id="2_ao3y2"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="3_nf648"]
+[ext_resource type="VideoStream" path="res://shaders/Notebook/file_example_MP4_1920_18MG.ogv" id="3_p5umn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnxh2"]
+shader = ExtResource("1_m005i")
+shader_parameter/disp = Vector2(0, 0)
+shader_parameter/zoom = 1.0
+
+[node name="Notebook" type="Node2D"]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_p5umn")
+autoplay = true
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ao3y2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_xnxh2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(649, 374)
+texture = ExtResource("3_nf648")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://nplsila6dgbf"]
+
+[ext_resource type="Shader" uid="uid://b51xja38y1wce" path="res://shaders/vertex shaders/Vertex Shader.tres" id="1_17hay"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="1_a7bjw"]
+[ext_resource type="Shader" path="res://shaders/vertex shaders/Vertex Shader.gdshader" id="3_100p7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fv0j"]
+shader = ExtResource("1_17hay")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qpxf"]
+shader = ExtResource("3_100p7")
+
+[node name="VertexShader" type="Node2D"]
+
+[node name="Icon2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1fv0j")
+position = Vector2(520, 174)
+texture = ExtResource("1_a7bjw")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5qpxf")
+position = Vector2(213, 178)
+texture = ExtResource("1_a7bjw")

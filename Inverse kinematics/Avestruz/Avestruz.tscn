@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://jti7eu3habe"]
+
+[ext_resource type="Texture2D" uid="uid://de8xk6mmws6hy" path="res://Inverse kinematics/assets/monigote.png" id="1_tmusm"]
+
+[node name="Avestruz" type="Node2D"]
+
+[node name="Poligonos" type="Node2D" parent="."]
+
+[node name="Pierna1" type="Polygon2D" parent="Poligonos"]
+
+[node name="Pierna2" type="Polygon2D" parent="Poligonos"]
+
+[node name="Pata3" type="Polygon2D" parent="Poligonos"]
+
+[node name="Pata4" type="Polygon2D" parent="Poligonos"]
+texture = ExtResource("1_tmusm")
+
+[node name="Cuerpo" type="Polygon2D" parent="Poligonos"]
+position = Vector2(44, 121)
+scale = Vector2(1.79559, 1.79559)
+texture = ExtResource("1_tmusm")
+polygon = PackedVector2Array(142.876, -4.94256, 132.615, 83.5908, 250.794, 98.1976, 260.11, 5.46707)
+uv = PackedVector2Array(145.578, 0.680271, 148.299, 104.762, 260.544, 102.721, 257.823, -3.40136)

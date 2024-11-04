@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3mwqks1piaxl"]
+
+[ext_resource type="Shader" path="res://shaders/Seamless background/Seamless background scroll.gdshader" id="1_tohug"]
+[ext_resource type="Texture2D" uid="uid://busnb4kqji8i0" path="res://shaders/Assets/kenney_pattern-pack/PNG/Default/pattern_46.png" id="2_lqa7d"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="3_b5kv0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_167yv"]
+shader = ExtResource("1_tohug")
+shader_parameter/scroll_speed = 0.2
+shader_parameter/angle = 47.9
+shader_parameter/repeat_x = 3.0
+shader_parameter/repeat_y = 3.0
+shader_parameter/tint = Color(1, 1, 1, 0.419608)
+
+[node name="SeamlessBackgroundScroll" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.776471, 0.45098, 0.972549, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_167yv")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lqa7d")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 493.0
+offset_top = 92.0
+offset_right = 621.0
+offset_bottom = 220.0
+texture = ExtResource("3_b5kv0")

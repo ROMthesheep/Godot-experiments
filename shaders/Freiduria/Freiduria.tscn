@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbj33joekgg1r"]
+
+[ext_resource type="Shader" path="res://shaders/Freiduria/Freiduria.gdshader" id="1_iygi6"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="2_s4stw"]
+[ext_resource type="Texture2D" uid="uid://b354ltptmikmc" path="res://shaders/Assets/jf3nql82.bmp" id="3_cdikf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mcm4h"]
+shader = ExtResource("1_iygi6")
+shader_parameter/colors = 1.0
+shader_parameter/dither = 0.235
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2e0m"]
+shader = ExtResource("1_iygi6")
+shader_parameter/colors = 10.0
+shader_parameter/dither = 0.26
+
+[node name="Freiduria" type="Node2D"]
+
+[node name="Jf3Nql82" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mcm4h")
+position = Vector2(566, 334)
+scale = Vector2(0.64925, 0.64925)
+texture = ExtResource("3_cdikf")
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_h2e0m")
+position = Vector2(529, 335)
+scale = Vector2(1.78125, 1.78125)
+texture = ExtResource("2_s4stw")

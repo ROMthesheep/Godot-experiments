@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cu77tarrfoofd"]
+
+[ext_resource type="VideoStream" path="res://shaders/monocrome monitor/SALVADOR RAYA diciendo SALCHICHON.ogv" id="1_7uaiy"]
+[ext_resource type="Shader" path="res://shaders/monocrome monitor/monomonitor.gdshader" id="1_jwvak"]
+[ext_resource type="Texture2D" uid="uid://cr2xru3urja7p" path="res://icon.png" id="3_om3fw"]
+[ext_resource type="Texture2D" uid="uid://64tmw4n76sey" path="res://shaders/monocrome monitor/Y29SlKt.png" id="3_p0b6s"]
+[ext_resource type="Texture2D" uid="uid://44n5ntmk0f76" path="res://shaders/Notebook/Captura de pantalla 2024-09-08 181104.png" id="4_fdni6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0pfcx"]
+shader = ExtResource("1_jwvak")
+shader_parameter/opacity = 1.0
+shader_parameter/pixel_size = 0.01
+shader_parameter/greyscale = false
+shader_parameter/contrast = 1.51
+shader_parameter/pixel_colors = Color(0.682353, 0.698039, 0.25098, 1)
+shader_parameter/background_color = Color(1.20327e-08, 9.62615e-08, 0.239478, 1)
+shader_parameter/tiledtexture = ExtResource("3_p0b6s")
+
+[node name="Monomonitor" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_7uaiy")
+autoplay = true
+expand = true
+loop = true
+buffering_msec = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_0pfcx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Jf3Nql82" type="Sprite2D" parent="."]
+position = Vector2(576.305, 322.726)
+scale = Vector2(1.05342, 1.074)
+texture = ExtResource("4_fdni6")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1734, 912)
+texture = ExtResource("3_om3fw")

@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfpr8tv8wlyp0"]
+
+[ext_resource type="Script" path="res://Inverse kinematics/Bichito/ComeSantos.gd" id="1_exr6c"]
+[ext_resource type="Texture2D" uid="uid://d2kj0cyu1avlx" path="res://Inverse kinematics/Bichito/Bicho.png" id="1_vqltf"]
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_xk2yn"]
+enabled = false
+target_nodepath = NodePath("../target")
+tip_nodepath = NodePath("cola/segmento 2/segmento 3/cabeza/Node2D")
+ccdik_data_chain_length = 3
+joint_data/0/bone_index = 0
+joint_data/0/bone2d_node = NodePath("cola")
+joint_data/0/rotate_from_joint = false
+joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
+joint_data/1/bone_index = 1
+joint_data/1/bone2d_node = NodePath("cola/segmento 2")
+joint_data/1/rotate_from_joint = false
+joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
+joint_data/2/bone_index = 2
+joint_data/2/bone2d_node = NodePath("cola/segmento 2/segmento 3")
+joint_data/2/rotate_from_joint = false
+joint_data/2/enable_constraint = false
+joint_data/2/editor_draw_gizmo = true
+
+[sub_resource type="SkeletonModification2DJiggle" id="SkeletonModification2DJiggle_ovtvd"]
+target_nodepath = NodePath("../target")
+jiggle_data_chain_length = 3
+use_gravity = true
+joint_data/0/bone_index = 0
+joint_data/0/bone2d_node = NodePath("cola")
+joint_data/0/override_defaults = true
+joint_data/0/stiffness = 3.0
+joint_data/0/mass = 0.75
+joint_data/0/damping = 0.75
+joint_data/0/use_gravity = true
+joint_data/0/gravity = Vector2(0, 6)
+joint_data/1/bone_index = 1
+joint_data/1/bone2d_node = NodePath("cola/segmento 2")
+joint_data/1/override_defaults = false
+joint_data/2/bone_index = 2
+joint_data/2/bone2d_node = NodePath("cola/segmento 2/segmento 3")
+joint_data/2/override_defaults = false
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_44cpq"]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource("SkeletonModification2DCCDIK_xk2yn")
+modifications/1 = SubResource("SkeletonModification2DJiggle_ovtvd")
+
+[node name="ComeSantos" type="Node2D"]
+script = ExtResource("1_exr6c")
+
+[node name="Bicho" type="Sprite2D" parent="."]
+position = Vector2(1758, 414)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(276, 39)
+scale = Vector2(0.565, 0.565)
+texture = ExtResource("1_vqltf")
+skeleton = NodePath("../Bichito")
+polygon = PackedVector2Array(653.968, 30.1587, 441.27, 234.921, 377.778, 366.667, 403.175, 501.587, 480.952, 503.175, 503.175, 317.46, 514.286, 292.063, 504.762, 211.111, 652.381, 165.079, 682.54, 188.889, 688.889, 98.4127, 817.46, 55.5556, 820.635, 120.635, 866.667, 100, 942.857, 30.1587, 1066.67, 9.52382, 1103.17, 49.2063, 1176.19, 84.127, 1263.49, 68.254, 1252.38, 115.873, 1192.06, 146.032, 1023.81, 101.587, 1231.75, 206.349, 1353.97, 392.063, 1363.49, 515.873, 1539.68, 619.048, 1604.76, 657.143, 1584.13, 700, 1488.89, 723.81, 1312.7, 615.873, 1317.46, 779.365, 1200, 779.365, 1225.4, 617.46, 1126.98, 615.873, 1001.59, 601.587, 930.159, 553.968, 926.984, 525.397, 990.476, 522.222, 1041.27, 550.794, 1098.41, 574.603, 1203.17, 552.381, 1171.43, 476.19, 1149.21, 523.81, 1106.35, 553.968, 1073.02, 561.905, 1061.9, 487.302, 1028.57, 452.381, 949.206, 492.063, 904.762, 498.413, 898.413, 549.206, 950.794, 619.048, 919.048, 655.555, 793.651, 657.143, 646.032, 615.873, 726.984, 665.079, 857.143, 666.667, 1028.57, 646.032, 1179.37, 617.46, 1117.46, 679.365, 688.889, 747.619, 490.476, 717.46, 476.19, 638.095, 287.302, 546.032, 282.54, 307.937, 436.508, -15.873, 577.778, 538.095, 369.841, 296.825, 647.619, 690.476, 839.682, 288.889, 1185.71, 322.222, 1290.48, 534.921)
+uv = PackedVector2Array(674.603, 25.3968, 461.905, 230.159, 398.413, 361.905, 423.81, 496.825, 501.587, 498.413, 523.81, 312.698, 534.921, 287.302, 525.397, 206.349, 673.016, 160.317, 703.175, 184.127, 709.524, 93.6508, 838.095, 50.7936, 841.27, 115.873, 887.302, 95.2381, 963.492, 25.3968, 1087.3, 4.7619, 1123.81, 44.4444, 1196.83, 79.3651, 1284.13, 63.492, 1273.02, 111.111, 1212.7, 141.27, 1044.44, 96.8254, 1252.38, 201.587, 1374.6, 387.302, 1384.13, 511.111, 1560.32, 614.286, 1625.4, 652.381, 1604.76, 695.238, 1509.52, 719.048, 1333.33, 611.111, 1338.1, 774.603, 1220.63, 774.603, 1246.03, 612.698, 1147.62, 611.111, 1022.22, 596.825, 950.794, 549.206, 947.619, 520.635, 1011.11, 517.46, 1061.9, 546.032, 1119.05, 569.841, 1223.81, 547.619, 1192.06, 471.429, 1169.84, 519.048, 1126.98, 549.206, 1093.65, 557.143, 1082.54, 482.54, 1049.21, 447.619, 969.841, 487.302, 925.397, 493.651, 919.048, 544.444, 971.429, 614.286, 939.682, 650.794, 814.286, 652.381, 666.667, 611.111, 747.619, 660.317, 877.778, 661.905, 1049.21, 641.27, 1200, 612.698, 1138.1, 674.603, 709.524, 742.857, 511.111, 712.698, 496.825, 633.333, 307.936, 541.27, 303.175, 303.175, 395.238, -31.746, 577.778, 538.095, 369.841, 296.825, 647.619, 690.476, 839.682, 288.889, 1185.71, 322.222, 1290.48, 534.921)
+polygons = [PackedInt32Array(64, 66, 0), PackedInt32Array(64, 63, 66), PackedInt32Array(66, 2, 0), PackedInt32Array(63, 62, 66), PackedInt32Array(66, 3, 62), PackedInt32Array(3, 61, 62), PackedInt32Array(61, 4, 3), PackedInt32Array(61, 65, 4), PackedInt32Array(65, 60, 61), PackedInt32Array(65, 67, 60), PackedInt32Array(67, 59, 60), PackedInt32Array(67, 53, 65), PackedInt32Array(67, 54, 53), PackedInt32Array(67, 54, 59), PackedInt32Array(59, 55, 54), PackedInt32Array(59, 58, 55), PackedInt32Array(55, 56, 58), PackedInt32Array(56, 57, 58), PackedInt32Array(65, 5, 4), PackedInt32Array(65, 53, 52), PackedInt32Array(65, 51, 52), PackedInt32Array(65, 50, 51), PackedInt32Array(65, 8, 7), PackedInt32Array(65, 7, 5), PackedInt32Array(65, 50, 48), PackedInt32Array(65, 48, 8), PackedInt32Array(8, 48, 9), PackedInt32Array(9, 68, 10), PackedInt32Array(68, 48, 9), PackedInt32Array(68, 46, 48), PackedInt32Array(68, 11, 10), PackedInt32Array(68, 12, 14), PackedInt32Array(68, 46, 14), PackedInt32Array(14, 21, 46), PackedInt32Array(14, 15, 21), PackedInt32Array(21, 16, 15), PackedInt32Array(21, 20, 16), PackedInt32Array(17, 16, 20), PackedInt32Array(17, 18, 19), PackedInt32Array(17, 20, 19), PackedInt32Array(46, 69, 21), PackedInt32Array(46, 45, 69), PackedInt32Array(45, 44, 69), PackedInt32Array(44, 43, 69), PackedInt32Array(43, 69, 42), PackedInt32Array(42, 69, 41), PackedInt32Array(69, 22, 21), PackedInt32Array(69, 22, 23), PackedInt32Array(69, 24, 23), PackedInt32Array(41, 70, 69), PackedInt32Array(70, 24, 69), PackedInt32Array(70, 41, 40), PackedInt32Array(70, 40, 32), PackedInt32Array(70, 32, 29), PackedInt32Array(70, 29, 24), PackedInt32Array(29, 28, 24), PackedInt32Array(28, 25, 24), PackedInt32Array(28, 27, 25), PackedInt32Array(25, 26, 27), PackedInt32Array(31, 29, 32), PackedInt32Array(31, 30, 29), PackedInt32Array(32, 39, 40), PackedInt32Array(32, 33, 39), PackedInt32Array(33, 38, 34), PackedInt32Array(33, 39, 38), PackedInt32Array(34, 37, 35), PackedInt32Array(34, 37, 38), PackedInt32Array(37, 36, 35)]
+bones = ["cola", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0.72, 1, 1, 0.72, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0.72), "cola/segmento 2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.72, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0), "cola/segmento 2/segmento 3", PackedFloat32Array(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cola/segmento 2/segmento 3/cabeza", PackedFloat32Array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0), "cola/segmento 2/segmento 3/cabeza/antena11", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0), "cola/segmento 2/segmento 3/cabeza/antena11/Antena12", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cola/segmento 2/segmento 3/cabeza/antena21", PackedFloat32Array(0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0), "cola/segmento 2/segmento 3/cabeza/antena21/antena22", PackedFloat32Array(1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0)]
+internal_vertex_count = 6
+
+[node name="Bichito" type="Skeleton2D" parent="."]
+position = Vector2(230, -33)
+modification_stack = SubResource("SkeletonModificationStack2D_44cpq")
+
+[node name="cola" type="Bone2D" parent="Bichito"]
+position = Vector2(772, 376)
+rotation = -0.382227
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, 772, 376)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="segmento 2" type="Bone2D" parent="Bichito/cola"]
+position = Vector2(-120, -162)
+rest = Transform2D(1, 0, 0, 1, -120, -162)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="segmento 3" type="Bone2D" parent="Bichito/cola/segmento 2"]
+position = Vector2(-191, 60)
+rotation = 0.509636
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, -191, 60)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="cabeza" type="Bone2D" parent="Bichito/cola/segmento 2/segmento 3"]
+position = Vector2(-95, 95)
+rotation = 0.191986
+scale = Vector2(0.999998, 0.999998)
+rest = Transform2D(1, 0, 0, 1, -95, 95)
+
+[node name="antena11" type="Bone2D" parent="Bichito/cola/segmento 2/segmento 3/cabeza"]
+position = Vector2(16, 77)
+rest = Transform2D(1, 0, 0, 1, 16, 77)
+
+[node name="Antena12" type="Bone2D" parent="Bichito/cola/segmento 2/segmento 3/cabeza/antena11"]
+position = Vector2(141, 27)
+rest = Transform2D(1, 0, 0, 1, 141, 27)
+auto_calculate_length_and_angle = false
+length = 148.345
+bone_angle = -10.77
+
+[node name="antena21" type="Bone2D" parent="Bichito/cola/segmento 2/segmento 3/cabeza"]
+position = Vector2(-107, 12)
+rest = Transform2D(1, 0, 0, 1, -107, 12)
+
+[node name="antena22" type="Bone2D" parent="Bichito/cola/segmento 2/segmento 3/cabeza/antena21"]
+position = Vector2(-9, -136)
+rest = Transform2D(1, 0, 0, 1, -9, -136)
+auto_calculate_length_and_angle = false
+length = 177.261
+bone_angle = -49.655
+
+[node name="Node2D" type="Node2D" parent="Bichito/cola/segmento 2/segmento 3/cabeza"]
+position = Vector2(504.267, -295.318)
+
+[node name="target" type="Node2D" parent="."]
+position = Vector2(91.0001, 288)
+scale = Vector2(0.999978, 0.999978)

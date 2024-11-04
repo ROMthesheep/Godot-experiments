@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3iv41vge3uyd"]
+
+[ext_resource type="Shader" path="res://shaders/4 level post/fourLevelPost.gdshader" id="1_rp12c"]
+[ext_resource type="Texture2D" uid="uid://b354ltptmikmc" path="res://shaders/Assets/jf3nql82.bmp" id="2_pu4q2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rh87e"]
+shader = ExtResource("1_rp12c")
+shader_parameter/level1 = Color(0, 0, 0, 1)
+shader_parameter/level2 = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/level3 = Color(0.813258, 0.813258, 0.813258, 1)
+shader_parameter/level4 = Color(1, 1, 1, 1)
+shader_parameter/threshold1 = 0.4
+shader_parameter/threshold2 = 0.52
+shader_parameter/threshold3 = 0.8
+
+[node name="PaperDither" type="Node2D"]
+position = Vector2(295, 190)
+scale = Vector2(0.49916, 0.49916)
+
+[node name="Jf3Nql82" type="Sprite2D" parent="."]
+position = Vector2(572.963, 258.434)
+scale = Vector2(1.21787, 1.21787)
+texture = ExtResource("2_pu4q2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_rh87e")
+offset_left = -509.0
+offset_top = -351.0
+offset_right = 1607.0
+offset_bottom = 841.0

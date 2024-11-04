@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://de1fpn536us5"]
+
+[ext_resource type="Texture2D" uid="uid://b354ltptmikmc" path="res://shaders/Assets/jf3nql82.bmp" id="1_abdrc"]
+[ext_resource type="Shader" path="res://shaders/NewsPaperDithering/paperDither.gdshader" id="1_reaye"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_636iy"]
+shader = ExtResource("1_reaye")
+shader_parameter/luminance = Color(0.3, 0.6, 0.1, 1)
+shader_parameter/tint = Color(1, 1, 1, 1)
+shader_parameter/brightness = 2.0
+shader_parameter/contrast = 2.0
+shader_parameter/scale = 1.22
+shader_parameter/angle = 3.0
+shader_parameter/angle_speed = 3.4
+
+[node name="PaperDither" type="Node2D"]
+position = Vector2(295, 190)
+scale = Vector2(0.49916, 0.49916)
+
+[node name="Jf3Nql82" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_636iy")
+position = Vector2(572.963, 258.434)
+scale = Vector2(1.21787, 1.21787)
+texture = ExtResource("1_abdrc")

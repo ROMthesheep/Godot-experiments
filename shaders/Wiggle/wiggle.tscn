@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkrsqgt3afp7q"]
+
+[ext_resource type="Shader" path="res://shaders/Wiggle/wiggle.gdshader" id="1_hdlkm"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="2_cbf44"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6iwb1"]
+shader = ExtResource("1_hdlkm")
+shader_parameter/Strength = 5.0
+shader_parameter/RandomOffset = 1.0
+
+[node name="Wiggle" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6iwb1")
+position = Vector2(516, 239)
+texture = ExtResource("2_cbf44")

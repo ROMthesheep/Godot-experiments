@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://hk07auim1upu"]
+
+[ext_resource type="Shader" path="res://shaders/Palette swap/Palette Swap.gdshader" id="1_kv2w8"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="2_tp8hg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_he2d4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lt6d8"]
+shader = ExtResource("1_kv2w8")
+shader_parameter/paletteSize = null
+
+[node name="PaletteSwap" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_he2d4")
+position = Vector2(652, 257)
+texture = ExtResource("2_tp8hg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_lt6d8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

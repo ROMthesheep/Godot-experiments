@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://pxcnxv31f5u5"]
+
+[ext_resource type="Texture2D" uid="uid://b354ltptmikmc" path="res://shaders/Assets/jf3nql82.bmp" id="1_rbbno"]
+[ext_resource type="Shader" path="res://shaders/Underwater/underwater.gdshader" id="2_micxi"]
+[ext_resource type="Texture2D" uid="uid://cr2xru3urja7p" path="res://icon.png" id="3_dgh64"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_72u7i"]
+noise_type = 2
+frequency = 0.0042
+fractal_type = 2
+fractal_gain = 0.975
+fractal_weighted_strength = 0.7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p2qly"]
+seamless = true
+seamless_blend_skirt = 0.625
+noise = SubResource("FastNoiseLite_72u7i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgr63"]
+shader = ExtResource("2_micxi")
+shader_parameter/color = Color(0.388235, 0.921569, 0.843137, 1)
+shader_parameter/speed = Vector2(0.03, 0.07)
+shader_parameter/wave_amplitude = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_p2qly")
+
+[node name="Underwater" type="Node2D"]
+
+[node name="Jf3Nql82" type="Sprite2D" parent="."]
+position = Vector2(562, 324)
+scale = Vector2(0.569147, 0.569147)
+texture = ExtResource("1_rbbno")
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mgr63")
+position = Vector2(793.5, 317)
+scale = Vector2(9.32813, 10.0938)
+texture = ExtResource("3_dgh64")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cigokei4saeso"]
+[gd_scene load_steps=6 format=3 uid="uid://cigokei4saeso"]
 
+[ext_resource type="Script" path="res://Inverse kinematics/Brazo/Brazo.gd" id="1_4grco"]
 [ext_resource type="Texture2D" uid="uid://de8xk6mmws6hy" path="res://Inverse kinematics/assets/monigote.png" id="1_i5g16"]
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_clwmy"]
@@ -43,6 +44,7 @@ modifications/0 = SubResource("SkeletonModification2DCCDIK_clwmy")
 radius = 35.117
 
 [node name="Brazo" type="CharacterBody2D"]
+script = ExtResource("1_4grco")
 
 [node name="Poligonos" type="Node2D" parent="."]
 
@@ -105,8 +107,8 @@ scale = Vector2(0.999968, 0.999968)
 rest = Transform2D(-0.75228, -0.658795, 0.658795, -0.75228, 0, 0)
 
 [node name="Brazo" type="Bone2D" parent="Skeleton2D/Base/Antebrazo"]
-position = Vector2(71, 52)
-rotation = 1.45884
+position = Vector2(71.0038, 52.0029)
+rotation = 0.945078
 rest = Transform2D(0.111723, 0.993739, -0.993739, 0.111723, 71, 52)
 metadata/_local_pose_override_enabled_ = true
 
@@ -123,12 +125,12 @@ position = Vector2(35.06, 0)
 remote_path = NodePath("../../../../../../CollisionShape2D")
 
 [node name="Target" type="Node2D" parent="."]
-position = Vector2(504, 166)
+position = Vector2(457, 157)
 rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(518.762, 175.764)
-rotation = -0.0473783
-scale = Vector2(0.999955, 0.999955)
+position = Vector2(492.022, 155.404)
+rotation = -0.0455354
+scale = Vector2(0.999966, 0.999966)
 shape = SubResource("CircleShape2D_axa1d")
 disabled = true

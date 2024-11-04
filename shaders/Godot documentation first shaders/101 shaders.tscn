@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://v80cj31x1jux"]
+
+[ext_resource type="Shader" path="res://shaders/Godot documentation first shaders/shader1.gdshader" id="1_mrdrn"]
+[ext_resource type="Texture2D" uid="uid://c2a2g11ehbums" path="res://icon.svg" id="2_r12h2"]
+[ext_resource type="Shader" path="res://shaders/Godot documentation first shaders/shader2.gdshader" id="3_rvtn7"]
+[ext_resource type="Shader" path="res://shaders/Godot documentation first shaders/shader3.gdshader" id="4_e2btg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_re7j5"]
+shader = ExtResource("1_mrdrn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xw2u6"]
+shader = ExtResource("3_rvtn7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dafmw"]
+shader = ExtResource("4_e2btg")
+
+[node name="101Shaders" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_re7j5")
+position = Vector2(122, 96)
+texture = ExtResource("2_r12h2")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xw2u6")
+position = Vector2(291.645, 96)
+texture = ExtResource("2_r12h2")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dafmw")
+position = Vector2(460, 96)
+texture = ExtResource("2_r12h2")
